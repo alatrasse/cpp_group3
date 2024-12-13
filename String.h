@@ -4,6 +4,7 @@ class String {
   
   String (String& str_to_copy);
   String (char* my_c_string);
+  ~String();
   c_str();
   size();
   clear();
