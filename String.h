@@ -1,5 +1,14 @@
+#ifndef STRING_H
+#define STRING_H
+
+#include <cstddef> //for size_t
+
 class String {
-  
+  private: 
+  char* data; 
+  size_t size; 
+  size_t capacity;
+
   public:
   
   String (String& str_to_copy);
@@ -25,3 +34,7 @@ class String {
   operator+(const string&, const string&);
   operator+(const string&, char);
   operator+(const string&, const char*);
+
+}; 
+
+#endif 
