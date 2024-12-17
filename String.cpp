@@ -14,4 +14,15 @@ String::String(const char* my_c_string) {
 }
 
 
+String::~String(){
+  delete [] data_;
+  }
 
+int String:: length() {
+  return size_;
+}
+
+void String::empty() {
+  delete [] data_;
+  data_ = new char[capacity];
+}
