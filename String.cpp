@@ -13,6 +13,12 @@ String::String(const char* my_c_string) {
 	data_[size_] = '\0'; 
 }
 
+//Length Method
+size_t String::length() const {
+	return size_; 
+}
+
+
 
 String::~String(){
   delete [] data_;
