@@ -20,8 +20,8 @@ class String {
   clear();
   
   
-  length();
-  max_size();
+  size_t length();
+  size_t max_size();
   resize(size_t, char);
 
   capacity();
