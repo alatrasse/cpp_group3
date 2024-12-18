@@ -18,6 +18,11 @@ size_t String::length() const {
 	return size_; 
 }
 
+//Max_size Method
+size_t String::max_size() const {
+	return 100; 
+}
+
 
 
 String::~String(){
