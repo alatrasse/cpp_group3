@@ -23,6 +23,24 @@ size_t String::max_size() const {
 	return 100; 
 }
 
+//Resize Method 
+void resize(size_t n, char c) {
+	if (n < size_) {
+		size_ = n; 
+	} else if (n > size_) {
+		if (n >= capacity_) {
+			reserve(n+1); 
+		}
+
+		for (size_t i = size_; i < n; i++) {
+			data_[i] = c; 
+		}
+	}
+	size_ = n; 
+	data_[size_] = '\0';
+}
+
+
 
 
 String::~String(){
