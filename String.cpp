@@ -13,6 +13,23 @@ String::String(const char* my_c_string) {
 	data_[size_] = '\0'; 
 }
 
+//Reserve Method
+void String::reserve(size_t new_capacity) {
+	if (new_capacity <= capacity_) return; 
+
+	// Allocating the new array with the new capacity
+	char* new_data = new char[new_capacity];
+	// Coping the old data into new array
+	for (size_t i = 0; i < size_; ++i) {
+		new_data[i] = data_[i]; 
+	}
+	// Free the memory
+	delete[] data_; 
+	// Upload the pointer and the capacity
+	data_ = new_data; 
+	capacity_ = new_capacity; 
+}
+
 //Length Method
 size_t String::length() const {
 	return size_; 
