@@ -57,6 +57,27 @@ void resize(size_t n, char c) {
 	data_[size_] = '\0';
 }
 
+// Operator=(const String&)
+
+String& String::operator=(const String& other) {
+	if (this == &other) return *this; //Control self-assignment 
+
+	delete[] data_; // Free the memory
+
+	// Coping other data
+	size_ = other.size_; 
+	capacity_ = other.capacity_; 
+	data_ = new char[capacity_]; 
+	for (size_t i = 0; i < size_; ++i) {
+		data_[i] = other.data_[i]; 
+
+	}
+
+	data_[size_] = '\0'; // Adding the null-terminator
+
+	return *this;
+}
+
 
 
 
@@ -64,9 +85,6 @@ String::~String(){
   delete [] data_;
   }
 
-int String:: length() {
-  return size_;
-}
 
 void String::empty() {
   delete [] data_;
