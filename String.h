@@ -35,7 +35,7 @@ class String {
   operator=(char);
   
   operator+(const string&, const string&);
-  friend String operator+(const string&, char); //It is a free function, I add friend to access the data members 
+  friend String operator+(const string& lhs, char rhs); //It is a free function, I add friend to access the data members 
   operator+(const string&, const char*);
 
 }; 
