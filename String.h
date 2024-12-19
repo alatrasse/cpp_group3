@@ -20,9 +20,9 @@ class String {
   clear();
   
   
-  size_t length();
-  size_t max_size();
-  resize(size_t, char);
+  size_t length() const;
+  size_t max_size() const;
+  void resize(size_t n, char c = '\0');
 
   capacity();
   empty();
