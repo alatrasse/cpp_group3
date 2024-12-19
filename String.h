@@ -31,7 +31,7 @@ class String {
   reserve(size_t);
   
   operator=(const char*);
-  operator=(const string&);
+  String& operator=(const String& other);
   operator=(char);
   
   operator+(const string&, const string&);
