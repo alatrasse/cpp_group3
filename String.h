@@ -28,14 +28,14 @@ class String {
 
   capacity();
   empty();
-  reserve(size_t);
+  
   
   operator=(const char*);
   String& operator=(const String& other);
   operator=(char);
   
   operator+(const string&, const string&);
-  operator+(const string&, char);
+  friend String operator+(const string&, char); //It is a free function, I add friend to access the data members 
   operator+(const string&, const char*);
 
 }; 
