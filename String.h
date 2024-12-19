@@ -9,6 +9,8 @@ class String {
   size_t size_; 
   size_t capacity_;
 
+  void reserve(size_t new_capacity); //It is useful when we have to increase the capacity of dynamic array
+
   public:
   
   String (String& str_to_copy);
