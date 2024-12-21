@@ -78,7 +78,24 @@ String& String::operator=(const String& other) {
 	return *this;
 }
 
+// Operator+(const String& lhs, char rhs)
+String operator+(const String& lhs, char rhs) {
 
+	String result("") // Making a new object for the result
+	result.size_ = lhs.size_ + 1; // Stabilising new length (lhs + char)
+	result.capacity_ = result.size_ + 1; // Stabilising new character 
+	result.data_ = new char[result.capacity_]; // Allocating new space for the data 
+	// Coping lhs data in result data
+	for (size_t i = 0; i < lhs.size_; ++i) {
+		result.data_[i] = lhs.data_[i]; 
+	}
+	// Adding rhs character iin the end
+	result.data_[lhs.size_] = rhs; 
+	// Null-terminator to keep the correct string 
+	result.data_[result.size_] = '\0'; 
+	
+	return result;
+}
 
 
 String::~String(){
