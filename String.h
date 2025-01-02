@@ -8,10 +8,14 @@ class String {
   char* data_; 
   size_t size_; 
   size_t capacity_;
+  int id; 
 
   void reserve(size_t new_capacity); //It is useful when we have to increase the capacity of dynamic array
 
   public:
+
+  // Default constructor: 
+  String(); 
   
   String (String& str_to_copy);
   String (char* my_c_string);
