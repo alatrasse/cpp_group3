@@ -42,7 +42,10 @@ String::String(const char* my_c_string) {
 	}
 	data_[size_] = '\0'; 
 }
-
+//C_str(): function that return the pointer to an array (c-string)
+    const char* String::c_str() const {
+    return data_; // Restituisce il puntatore all'array di caratteri
+     } 
 //Reserve Method
 void String::reserve(size_t new_capacity) {
 	if (new_capacity <= capacity_) return; 
@@ -58,6 +61,11 @@ void String::reserve(size_t new_capacity) {
 	// Upload the pointer and the capacity
 	data_ = new_data; 
 	capacity_ = new_capacity; 
+}
+
+//Size Method
+size_t String::size() const {
+	return size_
 }
 
 //Length Method
