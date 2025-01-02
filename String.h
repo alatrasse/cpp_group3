@@ -24,9 +24,14 @@ class String {
   ~String();
   // Get Id: 
   int getId(); 
+  //C_str() function that return the pointer to the first element in the array of the c-style string 
+  // It necessary the char* and not the char because we are passing an array that and
+  //with a \0 e not a singol character so we need to pass a pointer
+  const char* c_str() const; 
+  //Size: function that return the size of the string
+  size_t size() const;
   
-  c_str();
-  size();
+  
   clear();
   
   
