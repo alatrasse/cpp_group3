@@ -1,6 +1,36 @@
 #include "String.h"
 #include <iostream> 
 
+//Inizialization of the id at 1
+static int currentID = 1; 
+
+int String::getId(){
+	return id; 
+}
+
+//Definition of the default constructor: 
+String::String() {
+	data_[0] = 'H';
+	data_[1] = 'e';
+    data_[2] = 'l';
+    data_[3] = 'l';
+    data_[4] = 'o';
+    data_[5] = ' ';
+    data_[6] = 'W';
+    data_[7] = 'o';
+    data_[8] = 'r';
+    data_[9] = 'l';
+    data_[10] = 'd';
+    data_[11] = '\0'; 
+
+	id = currentID++; // increment the id 
+
+	size_ = 0; 
+	while (data_[size_] != '\0') {
+		size_++;
+	}
+}
+
 //Constructor from c-string 
 String::String(const char* my_c_string) {
 	size_ = 0; 
