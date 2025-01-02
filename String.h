@@ -16,10 +16,14 @@ class String {
 
   // Default constructor: 
   String(); 
-  
+  // Copy constructor:
   String (String& str_to_copy);
+  // Constructor from c_string: 
   String (char* my_c_string);
+  // Destructor: 
   ~String();
+  // Get Id: 
+  int getId(); 
   
   c_str();
   size();
