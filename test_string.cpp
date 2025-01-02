@@ -13,10 +13,10 @@ int main() {
     std::cin.get();
 
     // Create the object
-    Dummy_class obj1;
+    String obj1;
 
     // Print the data of the object
     std::cout << "Object 1 - ID: " << obj1.getId() << ", String: " << obj1.c_str() << ", Size: " << obj1.Size() << std::endl;
 
-    Dummy_class obj2;
+    String obj2;
     std::cout << "Object 2 - ID: " << obj2.getId() << ", String: " << obj2.c_str() << ", Size: " << obj2.Size() << std::endl << std::endl;
