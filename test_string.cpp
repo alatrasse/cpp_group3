@@ -153,9 +153,9 @@ int main() {
     //Define a new c-string: 
     const char* my_c_string = "Hello!";
     //Creation of a object from c-string: 
-    String obj3(my_c_string); 
-    std::cout << "Object 3 - My C-string is: " << my_c_string << std::endl; 
-    std::cout << "My new string is: " << obj3.c_str() << std::endl;
+    String obj4(my_c_string); 
+    std::cout << "Object 4 - My C-string is: " << my_c_string << std::endl; 
+    std::cout << "My new string is: " << obj4.c_str() << std::endl;
 
     // TEST OF LENGTH METHOD:
     std::cout << "\n***********************************************************\n";
@@ -193,20 +193,19 @@ int main() {
     std::cout << "Press any key to test the operator = with a reference for a string.\n"; 
     std::cin.get(); 
     // Assign obj3 to obj4:
-    std::cout << "Object 3: " << obj3.c_str() << std::endl; 
-    String obj4 = obj3; 
-    std::cout << "Assignment object4 = object3..." << std::endl; 
-    std::cout << "Object 4: " << obj4.c_str() << std::endl;
-
-    /    // TEST OPERATOR+(const String&, char)
+    std::cout << "Object 3: " << obj4.c_str() << std::endl; 
+    String obj5 = obj4; 
+    std::cout << "Assignment object5 = object4..." << std::endl; 
+    std::cout << "Object 4: " << obj5.c_str() << std::endl;
+    // TEST OPERATOR+(const String&, char)
     std::cout << "\n***********************************************************\n";
     std::cout << "TEST OPERATOR+(const String&, char)\n";
     std::cout << "***********************************************************\n";
     std::cout << "Press any key to test the operator + to append the char c to a string.\n"; 
-    // Append '?' to obj3: 
-    std::cout << "Object 3: " << obj3.c_str() << std::endl;
-    String obj5 = obj3.c_str() + '?';
-    std::cout << "Concatenation of obj3 and '?': " << obj5.c_str() << std::endl; 
+    // Append '?' to obj4: 
+    std::cout << "Object 4: " << obj4.c_str() << std::endl;
+    String obj6 = obj4.c_str() + '?';
+    std::cout << "Concatenation of obj4 and '?': " << obj6.c_str() << std::endl; 
     
 
 //-------------------------------------------- STUDENT C ------------------------------------------------ //

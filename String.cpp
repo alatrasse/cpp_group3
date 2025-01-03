@@ -231,11 +231,10 @@ String operator+(const String& lhs, char rhs) {
 }
 
 
-String::~String(){
-  delete [] data_;
-  }
-
-
+//String::~String(){
+  //delete [] data_;
+  //}
+  
 // void String::empty() {
 //   delete [] data_;
 //   data_ = new char[capacity];
