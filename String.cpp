@@ -130,121 +130,110 @@
     return newObj;
     } 
 
-// // i think that we can delate thIS function below becuase aremy function that i had already implemented up
-// //C_str(): function that return the pointer to an array (c-string)
-// const char* String::c_str() const {
-// 	return data_; // Restituisce il puntatore all'array di caratteri
-// 	}
 
-// //Size Method
-// size_t String::size() const {
-// 	return size_;
-// 	}
 
 
 // //-------------------------------------------- STUDENT B ------------------------------------------------ //
-// //Constructor from c-string 
-// String::String(const char* my_c_string) {
-// 	size_ = 0; 
-// 	while (my_c_string[size_] != 0) size_++; 
-// 	capacity_ = size_ + 1; 
-// 	data_ = new char[capacity_]
-// 	for (size_t i = 0; i < size_; i++) {
-// 		data_[i] = my_c_string[i]; 
-// 	}
-// 	data_[size_] = '\0'; 
-// }
+//Constructor from c-string 
+String::String(const char* my_c_string) {
+	size_t size_ = 0; 
+	while (my_c_string[size_] != '\0') size_++; 
+	capacity_ = size_ + 1; 
+	data_ = new char[capacity_];
+	for (size_t i = 0; i < size_; i++) {
+		data_[i] = my_c_string[i]; 
+	}
+	data_[size_] = '\0'; 
+}
 
-// //Reserve Method
-// void String::reserve(size_t new_capacity) {
-// 	if (new_capacity <= capacity_) return; 
+//Reserve Method
+void String::reserve(size_t new_capacity) {
+	if (new_capacity <= capacity_) return; 
 
-// 	// Allocating the new array with the new capacity
-// 	char* new_data = new char[new_capacity];
-// 	// Coping the old data into new array
-// 	for (size_t i = 0; i < size_; ++i) {
-// 		new_data[i] = data_[i]; 
-// 	}
-// 	// Free the memory
-// 	delete[] data_; 
-// 	// Upload the pointer and the capacity
-// 	data_ = new_data; 
-// 	capacity_ = new_capacity; 
-// }
+	// Allocating the new array with the new capacity
+	char* new_data = new char[new_capacity];
+	// Coping the old data into new array
+	for (size_t i = 0; i < size_; ++i) {
+		new_data[i] = data_[i]; 
+	}
+	// Free the memory
+	delete[] data_; 
+	// Upload the pointer and the capacity
+	data_ = new_data; 
+	capacity_ = new_capacity; 
+}
 
+//Length Method
+size_t String::length() const {
+	return size_; 
+}
 
+//Max_size Method
+size_t String::max_size() const {
+	return 100; 
+}
 
-// //Length Method
-// size_t String::length() const {
-// 	return size_; 
-// }
+//Resize Method 
+void String::resize(size_t n, char c) {
+	if (n < size_) {
+		size_ = n; 
+	} else if (n > size_) {
+		if (n >= capacity_) {
+			reserve(n+1); 
+		}
 
-// //Max_size Method
-// size_t String::max_size() const {
-// 	return 100; 
-// }
+		for (size_t i = size_; i < n; i++) {
+			data_[i] = c; 
+		}
+	}
+	size_ = n; 
+	data_[size_] = '\0';
+}
 
-// //Resize Method 
-// void resize(size_t n, char c) {
-// 	if (n < size_) {
-// 		size_ = n; 
-// 	} else if (n > size_) {
-// 		if (n >= capacity_) {
-// 			reserve(n+1); 
-// 		}
+/// Operator=(const String&)
 
-// 		for (size_t i = size_; i < n; i++) {
-// 			data_[i] = c; 
-// 		}
-// 	}
-// 	size_ = n; 
-// 	data_[size_] = '\0';
-// }
+String& String::operator=(const String& other) {
+	if (this == &other) return *this; //Control self-assignment 
 
-// // Operator=(const String&)
+	delete[] data_; // Free the memory
 
-// String& String::operator=(const String& other) {
-// 	if (this == &other) return *this; //Control self-assignment 
+	// Coping other data
+	size_ = other.size_; 
+	capacity_ = other.capacity_; 
+	data_ = new char[capacity_]; 
+	for (size_t i = 0; i < size_; ++i) {
+		data_[i] = other.data_[i]; 
 
-// 	delete[] data_; // Free the memory
+	}
 
-// 	// Coping other data
-// 	size_ = other.size_; 
-// 	capacity_ = other.capacity_; 
-// 	data_ = new char[capacity_]; 
-// 	for (size_t i = 0; i < size_; ++i) {
-// 		data_[i] = other.data_[i]; 
+	data_[size_] = '\0'; // Adding the null-terminator
 
-// 	}
+	return *this;
+}
 
-// 	data_[size_] = '\0'; // Adding the null-terminator
+// Operator+(const String& lhs, char rhs)
+String operator+(const String& lhs, char rhs) {
 
-// 	return *this;
-// }
-
-// // Operator+(const String& lhs, char rhs)
-// String operator+(const String& lhs, char rhs) {
-
-// 	String result("") // Making a new object for the result
-// 	result.size_ = lhs.size_ + 1; // Stabilising new length (lhs + char)
-// 	result.capacity_ = result.size_ + 1; // Stabilising new character 
-// 	result.data_ = new char[result.capacity_]; // Allocating new space for the data 
-// 	// Coping lhs data in result data
-// 	for (size_t i = 0; i < lhs.size_; ++i) {
-// 		result.data_[i] = lhs.data_[i]; 
-// 	}
-// 	// Adding rhs character iin the end
-// 	result.data_[lhs.size_] = rhs; 
-// 	// Null-terminator to keep the correct string 
-// 	result.data_[result.size_] = '\0'; 
+	String result(""); // Making a new object for the result
+	result.size_ = lhs.size_ + 1; // Stabilising new length (lhs + char)
+	result.capacity_ = result.size_ + 1; // Stabilising new character 
+	result.data_ = new char[result.capacity_]; // Allocating new space for the data 
+	// Coping lhs data in result data
+	for (size_t i = 0; i < lhs.size_; ++i) {
+		result.data_[i] = lhs.data_[i]; 
+	}
+	// Adding rhs character iin the end
+	result.data_[lhs.size_] = rhs; 
+	// Null-terminator to keep the correct string 
+	result.data_[result.size_] = '\0'; 
 	
-// 	return result;
-// }
+	return result;
+}
 
 
-// String::~String(){
-//   delete [] data_;
-//   }
+String::~String(){
+  delete [] data_;
+  }
 
 
 // void String::empty() {
