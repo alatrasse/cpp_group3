@@ -85,7 +85,7 @@ class String {
   
   
   
-  friend String operator+(const string& lhs, char rhs); //It is a free function, I add friend to access toperator+(const string&, const char*);
+  friend String operator+(const String& lhs, char rhs); //It is a free function, I add friend to access toperator+(const string&, const char*);
 
   //-------------------------------------------- STUDENT c  ------------------------------------------------ //
 
