@@ -10,8 +10,8 @@ class String {
   size_t size_; 
   size_t capacity_;
   
-  // What is this?
-  //void reserve(size_t new_capacity); //It is useful when we have to increase the capacity of dynamic array
+  
+  void reserve(size_t new_capacity); //It is useful when we have to increase the capacity of dynamic array
 
   //Member function
   public:
@@ -68,23 +68,24 @@ class String {
 
   //-------------------------------------------- STUDENT B  ------------------------------------------------ //
   
-  
-  // size_t length() const;
-  // size_t max_size() const;
-  // void resize(size_t n, char c = '\0');
+  //Constructor from a c-string: 
+  String (const char* my_c_string);
 
-  // capacity();
-  // empty();
-  
-  
-  // operator=(const char*);
-  // String& operator=(const String& other);
-  // operator=(char);
-  
-  // operator+(const string&, const string&);
-  // friend String operator+(const string& lhs, char rhs); //It is a free function, I add friend to access the data members 
-  // operator+(const string&, const char*);
+  //Length method: it gives the length of string:
+  size_t length() const;
 
+  //Max_size method: it gives the maximum size for a string in this class
+  size_t max_size() const;
+
+  //Resize method: it can resize a string adding a new character
+  void resize(size_t n, char c = '\0');
+
+  //Operator = --> it can assign a string to another string
+  String& operator=(const String& other);
+  
+  
+  
+  friend String operator+(const string& lhs, char rhs); //It is a free function, I add friend to access toperator+(const string&, const char*);
 
   //-------------------------------------------- STUDENT c  ------------------------------------------------ //
 
