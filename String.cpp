@@ -238,6 +238,24 @@ String operator+(const String& lhs, char rhs) {
 size_t String::capacity() const {
   return capacity_ ;
 } 
+
+bool String::empty() const {
+  bool is_empty = false;
+  if (size_ == 0) {
+    is_empty = true;
+  }
+  else {
+    int c = 0;
+    for (size_t i = 0; i < size_ ; i++) {
+      if (data_[i] != '\0'){
+      c++; 
+      } 
+    }
+    if (c == 0) { is_empty = true;}
+      
+  }
+  return is_empty;
+} 
 //String::~String(){
   //delete [] data_;
   //}

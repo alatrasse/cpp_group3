@@ -225,6 +225,19 @@ int main() {
     std::cin.get();
     std::cout << "Object 1 capacity: " << obj1.capacity() << std::endl;
   
+      // TEST OPERATOR+(const String&, char)
+    std::cout << "\n***********************************************************\n";
+    std::cout << "TEST EMPTY()\n";
+    std::cout << "***********************************************************\n";
+    std::cout << "Press any key to initiate an empty obj7 and test if it is empty.\n"; 
+     
+    
+    String obj7;
+    obj7.resize(0);
+    
+    std::cout << "for object 7, empty() returns : " << obj7.empty() << std::endl;
+    
+    std::cout << "While on the other end, for a full object like obj1, empty() returns : " << obj1.empty() << std::endl;
   
     return 0;
 }

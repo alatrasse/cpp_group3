@@ -90,6 +90,7 @@ class String {
   //-------------------------------------------- STUDENT c  ------------------------------------------------ //
   size_t capacity() const;
   
+  bool empty() const;
 }; 
 
 #endif 
