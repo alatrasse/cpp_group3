@@ -136,7 +136,7 @@
 // //-------------------------------------------- STUDENT B ------------------------------------------------ //
 //Constructor from c-string 
 String::String(const char* my_c_string) {
-	size_t size_ = 0; 
+	size_ = 0; 
 	while (my_c_string[size_] != '\0') size_++; 
 	capacity_ = size_ + 1; 
 	data_ = new char[capacity_];
@@ -175,20 +175,23 @@ size_t String::max_size() const {
 
 //Resize Method 
 void String::resize(size_t n, char c) {
-	if (n < size_) {
-		size_ = n; 
-	} else if (n > size_) {
-		if (n >= capacity_) {
-			reserve(n+1); 
-		}
-
-		for (size_t i = size_; i < n; i++) {
-			data_[i] = c; 
-		}
-	}
-	size_ = n; 
-	data_[size_] = '\0';
+    if (n < size_) {
+        
+        size_ = n;
+    } else if (n > size_) {
+        
+        if (n >= capacity_) {
+            reserve(n + 1); 
+        }
+        
+        for (size_t i = size_; i < n; ++i) {
+            data_[i] = c;
+        }
+        size_ = n;
+    }
+    data_[size_] = '\0';
 }
+
 
 /// Operator=(const String&)
 
