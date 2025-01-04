@@ -233,7 +233,11 @@ String operator+(const String& lhs, char rhs) {
 	return result;
 }
 
+// //-------------------------------------------- STUDENT C ------------------------------------------------ //
 
+size_t String::capacity() const {
+  return capacity_ ;
+} 
 //String::~String(){
   //delete [] data_;
   //}

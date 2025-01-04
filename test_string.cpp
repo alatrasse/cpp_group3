@@ -1,4 +1,4 @@
-#include "String.h"
+#include "String.cpp"
 #include <iostream>
 #include <limits>
 
@@ -217,8 +217,15 @@ int main() {
     
 
 //-------------------------------------------- STUDENT C ------------------------------------------------ //
-
-
+      // TEST OF CAPACITY() FUNCTION
+    std::cout << "\n***********************************************************\n";
+    std::cout << "TEST CAPACITY() FUNCTION\n";
+    std::cout << "***********************************************************\n";
+    std::cout << "Press any key to test the capacity() function that returns the capacity of obj1.\n";
+    std::cin.get();
+    std::cout << "Object 1 capacity: " << obj1.capacity() << std::endl;
+  
+  
     return 0;
 }
      
