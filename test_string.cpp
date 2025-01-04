@@ -209,10 +209,11 @@ int main() {
     std::cout << "Press any key to test the operator + to append the char c to a string.\n"; 
     // Append '?' to obj4: 
     String obj9("How are you");
+    char c = '?';
     std::cout << "Object 9: " << obj9.c_str() << std::endl;
-    std::cout << "I want to append '?' to obj9" << std::endl;
-    String obj10 = obj9.c_str() + '?';
-    std::cout << "Concatenation of obj4 and '?': " << obj10.c_str() << std::endl; 
+    std::cout << "I want to append " << c << " to obj9" << std::endl;
+    String obj10 = obj9.c_str() + c;
+    std::cout << "Concatenation of obj9 and '?': " << obj10.c_str() << std::endl; 
     
 
 //-------------------------------------------- STUDENT C ------------------------------------------------ //
