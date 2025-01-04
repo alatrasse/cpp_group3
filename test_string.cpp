@@ -162,7 +162,7 @@ int main() {
     std::cout << "\n***********************************************************\n";
     std::cout << "TEST 9: LENGTH() METHOD\n";
     std::cout << "***********************************************************\n";
-    std::cout << "Press any key to test the length() method that returns the length of the string in object1.\n";
+    std::cout << "Press any key to test the length() method that returns the length of the string in object5.\n";
     std::cin.get();
     String obj5("Bonjour");
     std::cout << "Object 5: " << obj5.c_str() << std::endl; 
@@ -187,7 +187,7 @@ int main() {
     std::cout << "Original object: " << obj6.c_str() << std::endl; 
     std::cout << "Resizing --> new size = 10 adding '!'" << std::endl;
     obj6.resize(10, '!');
-    std::cout << "Object after resizing: " << obj3.c_str() << std::endl; 
+    std::cout << "Object after resizing: " << obj6.c_str() << std::endl; 
     std::cout << "New object length: " << obj6.length() << std::endl;
 
     // TEST OPERATOR=(const String& other)
