@@ -212,7 +212,7 @@ int main() {
     char c = '?';
     std::cout << "Object 9: " << obj9.c_str() << std::endl;
     std::cout << "I want to append " << c << " to obj9" << std::endl;
-    String obj10 = obj9.c_str() + c;
+    String obj10 = obj9 + c;
     std::cout << "Concatenation of obj9 and '?': " << obj10.c_str() << std::endl; 
     
 
