@@ -164,8 +164,9 @@ int main() {
     std::cout << "***********************************************************\n";
     std::cout << "Press any key to test the length() method that returns the length of the string in object1.\n";
     std::cin.get();
-    std::cout << "Object 1: " << obj1.c_str() << std::endl; 
-    std::cout << "Object 1 length: " << obj1.length() << std::endl;
+    String obj5("Bonjour");
+    std::cout << "Object 5: " << obj5.c_str() << std::endl; 
+    std::cout << "Object 5 length: " << obj5.length() << std::endl;
 
     // TEST OF MAX SIZE METHOD: 
     std::cout << "\n***********************************************************\n";
@@ -181,11 +182,13 @@ int main() {
     std::cout << "***********************************************************\n";
     std::cout << "Press any key to test resize() method that returns a string with a different size and new characters.\n";
     std::cin.get(); 
-    // Resize of obj3 with size 10 and '!' as character:  
-    std::cout << "Original object: " << obj3.c_str() << std::endl; 
-    obj3.resize(10, '!');
+    // Resize of obj3 with size 10 and '!' as character:
+    String obj6("Hello");
+    std::cout << "Original object: " << obj6.c_str() << std::endl; 
+    std::cout << "Resizing --> new size = 10 adding '!'" << std::endl;
+    obj6.resize(10, '!');
     std::cout << "Object after resizing: " << obj3.c_str() << std::endl; 
-
+    std::cout << "New object length: " << obj6.length() << std::endl;
 
     // TEST OPERATOR=(const String& other)
     std::cout << "\n***********************************************************\n";
@@ -193,20 +196,23 @@ int main() {
     std::cout << "***********************************************************\n";
     std::cout << "Press any key to test the operator = with a reference for a string.\n"; 
     std::cin.get(); 
-    // Assign obj3 to obj4:
-    std::cout << "Object 3: " << obj4.c_str() << std::endl; 
-    String obj5 = obj4; 
-    std::cout << "Assignment object5 = object4..." << std::endl; 
-    std::cout << "Object 4: " << obj5.c_str() << std::endl;
+    // Assign obj7 to obj8:
+    String obj7("Good Morning");
+    std::cout << "Object 7: " << obj7.c_str() << std::endl; 
+    String obj8 = obj7; 
+    std::cout << "Assignment object8 = object7..." << std::endl; 
+    std::cout << "Object 8: " << obj8.c_str() << std::endl;
     // TEST OPERATOR+(const String&, char)
     std::cout << "\n***********************************************************\n";
     std::cout << "TEST OPERATOR+(const String&, char)\n";
     std::cout << "***********************************************************\n";
     std::cout << "Press any key to test the operator + to append the char c to a string.\n"; 
     // Append '?' to obj4: 
-    std::cout << "Object 4: " << obj4.c_str() << std::endl;
-    String obj6 = obj4.c_str() + '?';
-    std::cout << "Concatenation of obj4 and '?': " << obj6.c_str() << std::endl; 
+    String obj9("How are you");
+    std::cout << "Object 9: " << obj9.c_str() << std::endl;
+    std::cout << "I want to append '?' to obj9" << std::endl;
+    String obj10 = obj9.c_str() + '?';
+    std::cout << "Concatenation of obj4 and '?': " << obj10.c_str() << std::endl; 
     
 
 //-------------------------------------------- STUDENT C ------------------------------------------------ //
