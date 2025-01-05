@@ -295,6 +295,7 @@ String& String::operator=(const char* c) {
    }
    Data[Size] = '\0';
    String Concat; 
+   delete[] Concat.data_;
    Concat.size_ = Size;
    Concat.capacity_ = Capacity;
    Concat.data_ = Data;
