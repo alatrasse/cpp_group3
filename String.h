@@ -50,23 +50,7 @@ class String {
   //String first means that the function return a new object
   String operator+(const char* cstr) const;
 
-  // // i think that we can delate thIS function below becuase aremy function that i had already implemented up
-  // //Default constructor
-  // // Constructor from c_string: 
-  // String (char* my_c_string);
-  // // Destructor: 
-  // ~String();
-  // // Get Id: 
-  // int getId(); 
-  // //C_str() function that return the pointer to the first element in the array of the c-style string 
-  // // It necessary the char* and not the char because we are passing an array that and
-  // //with a \0 e not a singol character so we need to pass a pointer
-  // const char* c_str() const; 
-  // //Size: function that return the size of the string
-  // size_t size() const;
-  // clear();
-
-  //-------------------------------------------- STUDENT B  ------------------------------------------------ //
+  // //-------------------------------------------- STUDENT B  ------------------------------------------------ //
   
   //Constructor from a c-string: 
   String (const char* my_c_string);
@@ -87,14 +71,14 @@ class String {
   
   friend String operator+(const String& lhs, char rhs); //It is a free function, I add friend to access toperator+(const string&, const char*);
 
-  //-------------------------------------------- STUDENT c  ------------------------------------------------ //
-  ~String();
-  size_t capacity() const;
+  // //-------------------------------------------- STUDENT c  ------------------------------------------------ //
+  // ~String();
+  // size_t capacity() const;
   
-  bool empty() const;
-  String& operator=(const char* c);
+  // bool empty() const;
+  // String& operator=(const char* c);
   
-  friend String operator+(const String& leftstr, const String& rightstr);
+  // friend String operator+(const String& leftstr, const String& rightstr);
 }; 
 
 #endif 

@@ -133,171 +133,171 @@
 
 
 
-// //-------------------------------------------- STUDENT B ------------------------------------------------ //
-//Constructor from c-string 
-String::String(const char* my_c_string) {
-	size_ = 0; 
-	while (my_c_string[size_] != '\0') size_++; 
-	capacity_ = size_ + 1; 
-	data_ = new char[capacity_];
-	for (size_t i = 0; i < size_; i++) {
-		data_[i] = my_c_string[i]; 
-	}
-	data_[size_] = '\0'; 
-}
+// // //-------------------------------------------- STUDENT B ------------------------------------------------ //
+// //Constructor from c-string 
+// String::String(const char* my_c_string) {
+// 	size_ = 0; 
+// 	while (my_c_string[size_] != '\0') size_++; 
+// 	capacity_ = size_ + 1; 
+// 	data_ = new char[capacity_];
+// 	for (size_t i = 0; i < size_; i++) {
+// 		data_[i] = my_c_string[i]; 
+// 	}
+// 	data_[size_] = '\0'; 
+// }
 
-//Reserve Method
-void String::reserve(size_t new_capacity) {
-	if (new_capacity <= capacity_) return; 
+// //Reserve Method
+// void String::reserve(size_t new_capacity) {
+// 	if (new_capacity <= capacity_) return; 
 
-	// Allocating the new array with the new capacity
-	char* new_data = new char[new_capacity];
-	// Coping the old data into new array
-	for (size_t i = 0; i < size_; ++i) {
-		new_data[i] = data_[i]; 
-	}
-	// Free the memory
-	delete[] data_; 
-	// Upload the pointer and the capacity
-	data_ = new_data; 
-	capacity_ = new_capacity; 
-}
+// 	// Allocating the new array with the new capacity
+// 	char* new_data = new char[new_capacity];
+// 	// Coping the old data into new array
+// 	for (size_t i = 0; i < size_; ++i) {
+// 		new_data[i] = data_[i]; 
+// 	}
+// 	// Free the memory
+// 	delete[] data_; 
+// 	// Upload the pointer and the capacity
+// 	data_ = new_data; 
+// 	capacity_ = new_capacity; 
+// }
 
-//Length Method
-size_t String::length() const {
-	return size_; 
-}
+// //Length Method
+// size_t String::length() const {
+// 	return size_; 
+// }
 
-//Max_size Method
-size_t String::max_size() const {
-	return 100; 
-}
+// //Max_size Method
+// size_t String::max_size() const {
+// 	return 100; 
+// }
 
-//Resize Method 
-void String::resize(size_t n, char c) {
-    if (n < size_) {
+// //Resize Method 
+// void String::resize(size_t n, char c) {
+//     if (n < size_) {
         
-        size_ = n;
-    } else if (n > size_) {
+//         size_ = n;
+//     } else if (n > size_) {
         
-        if (n >= capacity_) {
-            reserve(n + 1); 
-        }
+//         if (n >= capacity_) {
+//             reserve(n + 1); 
+//         }
         
-        for (size_t i = size_; i < n; ++i) {
-            data_[i] = c;
-        }
-        size_ = n;
-    }
-    data_[size_] = '\0';
-}
+//         for (size_t i = size_; i < n; ++i) {
+//             data_[i] = c;
+//         }
+//         size_ = n;
+//     }
+//     data_[size_] = '\0';
+// }
 
 
-/// Operator=(const String&)
+// /// Operator=(const String&)
 
-String& String::operator=(const String& other) {
-	if (this == &other) return *this; //Control self-assignment 
+// String& String::operator=(const String& other) {
+// 	if (this == &other) return *this; //Control self-assignment 
 
-	delete[] data_; // Free the memory
+// 	delete[] data_; // Free the memory
 
-	// Coping other data
-	size_ = other.size_; 
-	capacity_ = other.capacity_; 
-	data_ = new char[capacity_]; 
-	for (size_t i = 0; i < size_; ++i) {
-		data_[i] = other.data_[i]; 
+// 	// Coping other data
+// 	size_ = other.size_; 
+// 	capacity_ = other.capacity_; 
+// 	data_ = new char[capacity_]; 
+// 	for (size_t i = 0; i < size_; ++i) {
+// 		data_[i] = other.data_[i]; 
 
-	}
+// 	}
 
-	data_[size_] = '\0'; // Adding the null-terminator
+// 	data_[size_] = '\0'; // Adding the null-terminator
 
-	return *this;
-}
+// 	return *this;
+// }
 
-// Operator+(const String& lhs, char rhs)
-String operator+(const String& lhs, char rhs) {
+// // Operator+(const String& lhs, char rhs)
+// String operator+(const String& lhs, char rhs) {
 
-	String result(""); // Making a new object for the result
-	result.size_ = lhs.size_ + 1; // Stabilising new length (lhs + char)
-	result.capacity_ = result.size_ + 1; // Stabilising new character 
-	result.data_ = new char[result.capacity_]; // Allocating new space for the data 
-	// Coping lhs data in result data
-	for (size_t i = 0; i < lhs.size_; ++i) {
-		result.data_[i] = lhs.data_[i]; 
-	}
-	// Adding rhs character iin the end
-	result.data_[lhs.size_] = rhs; 
-	// Null-terminator to keep the correct string 
-	result.data_[result.size_] = '\0'; 
+// 	String result(""); // Making a new object for the result
+// 	result.size_ = lhs.size_ + 1; // Stabilising new length (lhs + char)
+// 	result.capacity_ = result.size_ + 1; // Stabilising new character 
+// 	result.data_ = new char[result.capacity_]; // Allocating new space for the data 
+// 	// Coping lhs data in result data
+// 	for (size_t i = 0; i < lhs.size_; ++i) {
+// 		result.data_[i] = lhs.data_[i]; 
+// 	}
+// 	// Adding rhs character iin the end
+// 	result.data_[lhs.size_] = rhs; 
+// 	// Null-terminator to keep the correct string 
+// 	result.data_[result.size_] = '\0'; 
 	
-	return result;
-}
+// 	return result;
+// }
 
-// //-------------------------------------------- STUDENT C ------------------------------------------------ //
-String::~String(){
-  delete [] data_;
-  }
+// // //-------------------------------------------- STUDENT C ------------------------------------------------ //
+// String::~String(){
+//   delete [] data_;
+//   }
   
-size_t String::capacity() const {
-  return capacity_ ;
-} 
+// size_t String::capacity() const {
+//   return capacity_ ;
+// } 
 
-bool String::empty() const {
-  bool is_empty = false;
-  if (size_ == 0) {
-    is_empty = true;
-  }
-  else {
-    int c = 0;
-    for (size_t i = 0; i < size_ ; i++) {
-      if (data_[i] != '\0'){
-      c++; 
-      } 
-    }
-    if (c == 0) { is_empty = true;}
+// bool String::empty() const {
+//   bool is_empty = false;
+//   if (size_ == 0) {
+//     is_empty = true;
+//   }
+//   else {
+//     int c = 0;
+//     for (size_t i = 0; i < size_ ; i++) {
+//       if (data_[i] != '\0'){
+//       c++; 
+//       } 
+//     }
+//     if (c == 0) { is_empty = true;}
       
-  }
-  return is_empty;
-} 
-String& String::operator=(const char* c) {
-   if (c == nullptr) {
-         std::cout << "Null pointer assignment is not allowed.";
-    }
-  delete [] data_;
+//   }
+//   return is_empty;
+// } 
+// String& String::operator=(const char* c) {
+//    if (c == nullptr) {
+//          std::cout << "Null pointer assignment is not allowed.";
+//     }
+//   delete [] data_;
   
-  size_t length = 0;
-  while(c[length] != '\0') {
-  length++;
-  }
-  size_ = length;
-  capacity_= size_+1;
-  data_ = new char[capacity_];
-  for( size_t i = 0 ; i < size_ ; i++){
-    data_[i] = c[i] ; 
-  }
-  data_[size_] = '\0';
+//   size_t length = 0;
+//   while(c[length] != '\0') {
+//   length++;
+//   }
+//   size_ = length;
+//   capacity_= size_+1;
+//   data_ = new char[capacity_];
+//   for( size_t i = 0 ; i < size_ ; i++){
+//     data_[i] = c[i] ; 
+//   }
+//   data_[size_] = '\0';
   
-  return *this;
-}
+//   return *this;
+// }
 
- String operator+(const String& leftstr, const String& rightstr){
-  size_t Size = leftstr.size_+ rightstr.size_;
-  size_t Capacity = Size + 1;
- char* Data = new char[Capacity];
+//  String operator+(const String& leftstr, const String& rightstr){
+//   size_t Size = leftstr.size_+ rightstr.size_;
+//   size_t Capacity = Size + 1;
+//  char* Data = new char[Capacity];
 
-  for (size_t i = 0 ; i<leftstr.size_ ; i++	){
+//   for (size_t i = 0 ; i<leftstr.size_ ; i++	){
   
-    Data[i] = leftstr.data_[i];
-   }
-   for (size_t i = 0 ; i<rightstr.size_ ; i++	){
+//     Data[i] = leftstr.data_[i];
+//    }
+//    for (size_t i = 0 ; i<rightstr.size_ ; i++	){
   
-    Data[leftstr.size_+i] = rightstr.data_[i];
-   }
-   Data[Size] = '\0';
-   String Concat; 
-   delete[] Concat.data_;
-   Concat.size_ = Size;
-   Concat.capacity_ = Capacity;
-   Concat.data_ = Data;
-   return Concat;
- }
+//     Data[leftstr.size_+i] = rightstr.data_[i];
+//    }
+//    Data[Size] = '\0';
+//    String Concat; 
+//    delete[] Concat.data_;
+//    Concat.size_ = Size;
+//    Concat.capacity_ = Capacity;
+//    Concat.data_ = Data;
+//    return Concat;
+ //}
