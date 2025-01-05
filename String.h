@@ -93,6 +93,8 @@ class String {
   
   bool empty() const;
   String& operator=(const char* c);
+  
+  friend String operator+(const String& leftstr, const String& rightstr);
 }; 
 
 #endif 

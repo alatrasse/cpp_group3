@@ -280,7 +280,23 @@ String& String::operator=(const char* c) {
   return *this;
 }
 
-// void String::empty() {
-//   delete [] data_;
-//   data_ = new char[capacity];
-// }
+ String operator+(const String& leftstr, const String& rightstr){
+  size_t Size = leftstr.size_+ rightstr.size_;
+  size_t Capacity = Size + 1;
+ char* Data = new char[Capacity];
+
+  for (size_t i = 0 ; i<leftstr.size_ ; i++	){
+  
+    Data[i] = leftstr.data_[i];
+   }
+   for (size_t i = 0 ; i<rightstr.size_ ; i++	){
+  
+    Data[leftstr.size_+i] = rightstr.data_[i];
+   }
+   Data[Size] = '\0';
+   String Concat; 
+   Concat.size_ = Size;
+   Concat.capacity_ = Capacity;
+   Concat.data_ = Data;
+   return Concat;
+ }

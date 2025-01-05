@@ -249,8 +249,26 @@ int main() {
     std::cin >> sequence[2];
     // Assign sequence to obj8:
     String obj8 = sequence; 
-    std::cout << "Object 8: " << obj8.c_str() << std::endl; 
-  
+    delete[] sequence;
+    std::cout << "Object 8: " << obj8.c_str() << std::endl;
+    
+     
+   // TEST OPERATOR+(const &string, const &string)
+    std::cout << "\n***********************************************************\n";
+    std::cout << "TEST OPERATOR+(const &string, const &string)\n";
+    std::cout << "***********************************************************\n";
+    std::cout << "we will concatenate the following objects:\n";
+    char Hello[7] = { 'H' , 'e' , 'l' , 'l' , 'o' , ' ', '\0'};
+    char World[6] = { 'W' , 'o' , 'r' , 'l' , 'd' , '\0'}; 
+    String obj9;
+    obj9 = Hello;
+    String obj10; 
+    obj10 = World;
+    std::cout << "Object 9: " << obj9.c_str() << obj9.Size() << std::endl; 
+    std::cout << "Object 10: " << obj10.c_str() << std::endl;
+    String concatenation;
+    concatenation = obj9 + obj10;
+    std::cout << "Concatenation result : " << concatenation.c_str() << std::endl;
     return 0;
 }
      
