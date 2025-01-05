@@ -231,10 +231,10 @@ int main() {
     std::cout << "Press any key to initiate an empty obj7 and test if it is empty.\n"; 
      
     
-    String obj7;
-    obj7.resize(0);
+    String obj11;
+    obj11.resize(0);
     
-    std::cout << "for object 7, empty() returns : " << obj7.empty() << std::endl;
+    std::cout << "for object 11, empty() returns : " << obj11.empty() << std::endl;
     
     std::cout << "While on the other end, for a full object like obj1, empty() returns : " << obj1.empty() << std::endl;
     
@@ -247,10 +247,10 @@ int main() {
     std::cin >> sequence[0];
     std::cin >> sequence[1];
     std::cin >> sequence[2];
-    // Assign sequence to obj8:
-    String obj8 = sequence; 
+    // Assign sequence to obj12:
+    String obj12 = sequence; 
     delete[] sequence;
-    std::cout << "Object 8: " << obj8.c_str() << std::endl;
+    std::cout << "Object 12: " << obj12.c_str() << std::endl;
     
      
    // TEST OPERATOR+(const &string, const &string)
@@ -260,16 +260,16 @@ int main() {
     std::cout << "we will concatenate the following objects:\n";
     char* Hello = new char[7] { 'H' , 'e' , 'l' , 'l' , 'o' , ' ', '\0'};
     char* World = new char[6]  { 'W' , 'o' , 'r' , 'l' , 'd' , '\0'}; 
-    String obj9;
-    obj9 = Hello;
-    String obj10; 
-    obj10 = World;
+    String obj13;
+    obj13 = Hello;
+    String obj14; 
+    obj14 = World;
     delete[] Hello;
     delete[] World;
-    std::cout << "Object 9: " << obj9.c_str() << obj9.Size() << std::endl; 
-    std::cout << "Object 10: " << obj10.c_str() << std::endl;
+    std::cout << "Object 13: " << obj13.c_str() << std::endl; 
+    std::cout << "Object 14: " << obj14.c_str() << std::endl;
     String concatenation;
-    concatenation = obj9 + obj10;
+    concatenation = obj13 + obj14;
     std::cout << "Concatenation result : " << concatenation.c_str() << std::endl;
     return 0;
 }
