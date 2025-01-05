@@ -258,12 +258,14 @@ int main() {
     std::cout << "TEST OPERATOR+(const &string, const &string)\n";
     std::cout << "***********************************************************\n";
     std::cout << "we will concatenate the following objects:\n";
-    char Hello[7] = { 'H' , 'e' , 'l' , 'l' , 'o' , ' ', '\0'};
-    char World[6] = { 'W' , 'o' , 'r' , 'l' , 'd' , '\0'}; 
+    char* Hello = new char[7] { 'H' , 'e' , 'l' , 'l' , 'o' , ' ', '\0'};
+    char* World = new char[6]  { 'W' , 'o' , 'r' , 'l' , 'd' , '\0'}; 
     String obj9;
     obj9 = Hello;
     String obj10; 
     obj10 = World;
+    delete[] Hello;
+    delete[] World;
     std::cout << "Object 9: " << obj9.c_str() << obj9.Size() << std::endl; 
     std::cout << "Object 10: " << obj10.c_str() << std::endl;
     String concatenation;
