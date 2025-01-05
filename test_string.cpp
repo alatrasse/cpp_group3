@@ -225,8 +225,7 @@ int main() {
     std::cin.get();
     std::cout << "Object 1 capacity: " << obj1.capacity() << std::endl;
   
-      // TEST OPERATOR+(const String&, char)
-    std::cout << "\n***********************************************************\n";
+
     std::cout << "TEST EMPTY()\n";
     std::cout << "***********************************************************\n";
     std::cout << "Press any key to initiate an empty obj7 and test if it is empty.\n"; 
@@ -238,6 +237,19 @@ int main() {
     std::cout << "for object 7, empty() returns : " << obj7.empty() << std::endl;
     
     std::cout << "While on the other end, for a full object like obj1, empty() returns : " << obj1.empty() << std::endl;
+    
+     // TEST OPERATOR=(const char* c)
+    std::cout << "\n***********************************************************\n";
+    std::cout << "TEST OPERATOR=(const char* c)\n";
+    std::cout << "***********************************************************\n";
+    std::cout << "Please enter letter by letter to fill a 3-letter char*.\n";
+    char* sequence = new char[3];
+    std::cin >> sequence[0];
+    std::cin >> sequence[1];
+    std::cin >> sequence[2];
+    // Assign sequence to obj8:
+    String obj8 = sequence; 
+    std::cout << "Object 8: " << obj8.c_str() << std::endl; 
   
     return 0;
 }

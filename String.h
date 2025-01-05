@@ -23,7 +23,7 @@ class String {
 
   //Copy constructor: create an object equal to another
   String(String& other);
-
+  
 
   //C_str() function that return the pointer to the first element in the array of the c-style string 
   // It necessary the char* and not the char because we are passing an array that and
@@ -88,9 +88,11 @@ class String {
   friend String operator+(const String& lhs, char rhs); //It is a free function, I add friend to access toperator+(const string&, const char*);
 
   //-------------------------------------------- STUDENT c  ------------------------------------------------ //
+  ~String();
   size_t capacity() const;
   
   bool empty() const;
+  String& operator=(const char* c);
 }; 
 
 #endif 

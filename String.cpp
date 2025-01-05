@@ -234,7 +234,10 @@ String operator+(const String& lhs, char rhs) {
 }
 
 // //-------------------------------------------- STUDENT C ------------------------------------------------ //
-
+String::~String(){
+  delete [] data_;
+  }
+  
 size_t String::capacity() const {
   return capacity_ ;
 } 
@@ -256,10 +259,27 @@ bool String::empty() const {
   }
   return is_empty;
 } 
-//String::~String(){
-  //delete [] data_;
-  //}
+String& String::operator=(const char* c) {
+   if (c == nullptr) {
+         std::cout << "Null pointer assignment is not allowed.";
+    }
+  delete [] data_;
   
+  size_t length = 0;
+  while(c[length] != '\0') {
+  length++;
+  }
+  size_ = length;
+  capacity_= size_+1;
+  data_ = new char[capacity_];
+  for( size_t i = 0 ; i < size_ ; i++){
+    data_[i] = c[i] ; 
+  }
+  data_[size_] = '\0';
+  
+  return *this;
+}
+
 // void String::empty() {
 //   delete [] data_;
 //   data_ = new char[capacity];
