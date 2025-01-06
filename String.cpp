@@ -233,71 +233,71 @@ String operator+(const String& lhs, char rhs) {
 	return result;
 }
 
-// // //-------------------------------------------- STUDENT C ------------------------------------------------ //
-// String::~String(){
-//   delete [] data_;
-//   }
+// //-------------------------------------------- STUDENT C ------------------------------------------------ //
+String::~String(){
+  delete [] data_;
+  }
   
-// size_t String::capacity() const {
-//   return capacity_ ;
-// } 
+size_t String::capacity() const {
+  return capacity_ ;
+} 
 
-// bool String::empty() const {
-//   bool is_empty = false;
-//   if (size_ == 0) {
-//     is_empty = true;
-//   }
-//   else {
-//     int c = 0;
-//     for (size_t i = 0; i < size_ ; i++) {
-//       if (data_[i] != '\0'){
-//       c++; 
-//       } 
-//     }
-//     if (c == 0) { is_empty = true;}
+bool String::empty() const {
+  bool is_empty = false;
+  if (size_ == 0) {
+    is_empty = true;
+  }
+  else {
+    int c = 0;
+    for (size_t i = 0; i < size_ ; i++) {
+      if (data_[i] != '\0'){
+      c++; 
+      } 
+    }
+    if (c == 0) { is_empty = true;}
       
-//   }
-//   return is_empty;
-// } 
-// String& String::operator=(const char* c) {
-//    if (c == nullptr) {
-//          std::cout << "Null pointer assignment is not allowed.";
-//     }
-//   delete [] data_;
+  }
+  return is_empty;
+} 
+String& String::operator=(const char* c) {
+   if (c == nullptr) {
+         std::cout << "Null pointer assignment is not allowed.";
+    }
+  delete [] data_;
   
-//   size_t length = 0;
-//   while(c[length] != '\0') {
-//   length++;
-//   }
-//   size_ = length;
-//   capacity_= size_+1;
-//   data_ = new char[capacity_];
-//   for( size_t i = 0 ; i < size_ ; i++){
-//     data_[i] = c[i] ; 
-//   }
-//   data_[size_] = '\0';
+  size_t length = 0;
+  while(c[length] != '\0') {
+  length++;
+  }
+  size_ = length;
+  capacity_= size_+1;
+  data_ = new char[capacity_];
+  for( size_t i = 0 ; i < size_ ; i++){
+    data_[i] = c[i] ; 
+  }
+  data_[size_] = '\0';
   
-//   return *this;
-// }
+  return *this;
+}
 
-//  String operator+(const String& leftstr, const String& rightstr){
-//   size_t Size = leftstr.size_+ rightstr.size_;
-//   size_t Capacity = Size + 1;
-//  char* Data = new char[Capacity];
+ String operator+(const String& leftstr, const String& rightstr){
+  size_t Size = leftstr.size_+ rightstr.size_;
+  size_t Capacity = Size + 1;
+ char* Data = new char[Capacity];
 
-//   for (size_t i = 0 ; i<leftstr.size_ ; i++	){
+  for (size_t i = 0 ; i<leftstr.size_ ; i++	){
   
-//     Data[i] = leftstr.data_[i];
-//    }
-//    for (size_t i = 0 ; i<rightstr.size_ ; i++	){
+    Data[i] = leftstr.data_[i];
+   }
+   for (size_t i = 0 ; i<rightstr.size_ ; i++	){
   
-//     Data[leftstr.size_+i] = rightstr.data_[i];
-//    }
-//    Data[Size] = '\0';
-//    String Concat; 
-//    delete[] Concat.data_;
-//    Concat.size_ = Size;
-//    Concat.capacity_ = Capacity;
-//    Concat.data_ = Data;
-//    return Concat;
- //}
+    Data[leftstr.size_+i] = rightstr.data_[i];
+   }
+   Data[Size] = '\0';
+   String Concat; 
+   delete[] Concat.data_;
+   Concat.size_ = Size;
+   Concat.capacity_ = Capacity;
+   Concat.data_ = Data;
+   return Concat;
+ }

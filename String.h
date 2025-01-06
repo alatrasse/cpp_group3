@@ -71,14 +71,14 @@ class String {
   
   friend String operator+(const String& lhs, char rhs); //It is a free function, I add friend to access toperator+(const string&, const char*);
 
-  // //-------------------------------------------- STUDENT c  ------------------------------------------------ //
-  // ~String();
-  // size_t capacity() const;
+  //-------------------------------------------- STUDENT c  ------------------------------------------------ //
+  ~String();
+  size_t capacity() const;
   
-  // bool empty() const;
-  // String& operator=(const char* c);
+  bool empty() const;
+  String& operator=(const char* c);
   
-  // friend String operator+(const String& leftstr, const String& rightstr);
+  friend String operator+(const String& leftstr, const String& rightstr);
 }; 
 
 #endif 

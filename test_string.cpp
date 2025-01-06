@@ -217,60 +217,60 @@ int main() {
     
 
 // //-------------------------------------------- STUDENT C ------------------------------------------------ //
-//     // TEST OF CAPACITY() FUNCTION
-//     std::cout << "\n***********************************************************\n";
-//     std::cout << "TEST CAPACITY() FUNCTION\n";
-//     std::cout << "***********************************************************\n";
-//     std::cout << "Press any key to test the capacity() function that returns the capacity of obj1.\n";
-//     std::cin.get();
-//     std::cout << "Object 1 capacity: " << obj1.capacity() << std::endl;
+    // TEST OF CAPACITY() FUNCTION
+    std::cout << "\n***********************************************************\n";
+    std::cout << "TEST CAPACITY() FUNCTION\n";
+    std::cout << "***********************************************************\n";
+    std::cout << "Press any key to test the capacity() function that returns the capacity of obj1.\n";
+    std::cin.get();
+    std::cout << "Object 1 capacity: " << obj1.capacity() << std::endl;
   
 
-//     std::cout << "TEST EMPTY()\n";
-//     std::cout << "***********************************************************\n";
-//     std::cout << "Press any key to initiate an empty obj7 and test if it is empty.\n"; 
+    std::cout << "TEST EMPTY()\n";
+    std::cout << "***********************************************************\n";
+    std::cout << "Press any key to initiate an empty obj7 and test if it is empty.\n"; 
      
     
-//     String obj11;
-//     obj11.resize(0);
+    String obj11;
+    obj11.resize(0);
     
-//     std::cout << "for object 11, empty() returns : " << obj11.empty() << std::endl;
+    std::cout << "for object 11, empty() returns : " << obj11.empty() << std::endl;
     
-//     std::cout << "While on the other end, for a full object like obj1, empty() returns : " << obj1.empty() << std::endl;
+    std::cout << "While on the other end, for a full object like obj1, empty() returns : " << obj1.empty() << std::endl;
     
-//      // TEST OPERATOR=(const char* c)
-//     std::cout << "\n***********************************************************\n";
-//     std::cout << "TEST OPERATOR=(const char* c)\n";
-//     std::cout << "***********************************************************\n";
-//     std::cout << "Please enter letter by letter to fill a 3-letter char*.\n";
-//     char* sequence = new char[3];
-//     std::cin >> sequence[0];
-//     std::cin >> sequence[1];
-//     std::cin >> sequence[2];
-//     // Assign sequence to obj12:
-//     String obj12 = sequence; 
-//     delete[] sequence;
-//     std::cout << "Object 12: " << obj12.c_str() << std::endl;
+     // TEST OPERATOR=(const char* c)
+    std::cout << "\n***********************************************************\n";
+    std::cout << "TEST OPERATOR=(const char* c)\n";
+    std::cout << "***********************************************************\n";
+    std::cout << "Please enter letter by letter to fill a 3-letter char*.\n";
+    char* sequence = new char[3];
+    std::cin >> sequence[0];
+    std::cin >> sequence[1];
+    std::cin >> sequence[2];
+    // Assign sequence to obj12:
+    String obj12 = sequence; 
+    delete[] sequence;
+    std::cout << "Object 12: " << obj12.c_str() << std::endl;
     
      
-//    // TEST OPERATOR+(const &string, const &string)
-//     std::cout << "\n***********************************************************\n";
-//     std::cout << "TEST OPERATOR+(const &string, const &string)\n";
-//     std::cout << "***********************************************************\n";
-//     std::cout << "we will concatenate the following objects:\n";
-//     char* Hello = new char[7] { 'H' , 'e' , 'l' , 'l' , 'o' , ' ', '\0'};
-//     char* World = new char[6]  { 'W' , 'o' , 'r' , 'l' , 'd' , '\0'}; 
-//     String obj13;
-//     obj13 = Hello;
-//     String obj14; 
-//     obj14 = World;
-//     delete[] Hello;
-//     delete[] World;
-//     std::cout << "Object 13: " << obj13.c_str() << std::endl; 
-//     std::cout << "Object 14: " << obj14.c_str() << std::endl;
-//     String concatenation;
-//     concatenation = obj13 + obj14;
-//     std::cout << "Concatenation result : " << concatenation.c_str() << std::endl;
+   // TEST OPERATOR+(const &string, const &string)
+    std::cout << "\n***********************************************************\n";
+    std::cout << "TEST OPERATOR+(const &string, const &string)\n";
+    std::cout << "***********************************************************\n";
+    std::cout << "we will concatenate the following objects:\n";
+    char* Hello = new char[7] { 'H' , 'e' , 'l' , 'l' , 'o' , ' ', '\0'};
+    char* World = new char[6]  { 'W' , 'o' , 'r' , 'l' , 'd' , '\0'}; 
+    String obj13;
+    obj13 = Hello;
+    String obj14; 
+    obj14 = World;
+    delete[] Hello;
+    delete[] World;
+    std::cout << "Object 13: " << obj13.c_str() << std::endl; 
+    std::cout << "Object 14: " << obj14.c_str() << std::endl;
+    String concatenation;
+    concatenation = obj13 + obj14;
+    std::cout << "Concatenation result : " << concatenation.c_str() << std::endl;
     return 0;
 }
      
