@@ -4,7 +4,8 @@
 
 
 int main() {
-
+// PROJECT STRING
+// MEMBERS: Nicolò Manni, Andrea Bolla, Arthur Latrasse
 //-------------------------------------------- STUDENT A ------------------------------------------------ //
     // TEST OF THE DEFAULT CONSTRUCTOR
     std::cout << "\n***********************************************************\n";
@@ -182,11 +183,16 @@ int main() {
     std::cout << "***********************************************************\n";
     std::cout << "Press any key to test resize() method that returns a string with a different size and new characters.\n";
     std::cin.get(); 
-    // Resize of obj3 with size 10 and '!' as character:
+    size_t n; 
+    std::cout << "Enter the new size for the string: "; 
+    std::cin >> n;
+    char c;
+    std::cout << "Enter the character to resize the string: "; 
+    std::cin >> c;
     String obj6("Hello");
     std::cout << "Original object: " << obj6.c_str() << std::endl; 
-    std::cout << "Resizing --> new size = 10 adding '!'" << std::endl;
-    obj6.resize(10, '!');
+    std::cout << "Resizing --> new size = " << n << " adding '" << c << "'" << std::endl;
+    obj6.resize(n, c);
     std::cout << "Object after resizing: " << obj6.c_str() << std::endl; 
     std::cout << "New object length: " << obj6.length() << std::endl;
 
@@ -209,11 +215,13 @@ int main() {
     std::cout << "Press any key to test the operator + to append the char c to a string.\n"; 
     // Append '?' to obj4: 
     String obj9("How are you");
-    char c = '?';
+    char c_user;
+    std::cout << "Enter the character to append to " << obj9.c_str() << ": ";
+    std::cin >> c_user; 
     std::cout << "Object 9: " << obj9.c_str() << std::endl;
-    std::cout << "I want to append " << c << " to obj9" << std::endl;
+    std::cout << "I want to append " << c_user << " to obj9" << std::endl;
     String obj10 = obj9 + c;
-    std::cout << "Concatenation of obj9 and '?': " << obj10.c_str() << std::endl; 
+    std::cout << "Concatenation of obj9 and " << c_user <<": " << obj10.c_str() << std::endl; 
     
 
 // //-------------------------------------------- STUDENT C ------------------------------------------------ //
