@@ -234,14 +234,16 @@ String operator+(const String& lhs, char rhs) {
 }
 
 // //-------------------------------------------- STUDENT C ------------------------------------------------ //
+  //default destructor
 String::~String(){
   delete [] data_;
   }
-  
+//Capacity accessor
 size_t String::capacity() const {
   return capacity_ ;
 } 
 
+//tests if the String is empty
 bool String::empty() const {
   bool is_empty = false;
   if (size_ == 0) {
@@ -259,6 +261,8 @@ bool String::empty() const {
   }
   return is_empty;
 } 
+
+//String declaration with = operator from char array
 String& String::operator=(const char* c) {
    if (c == nullptr) {
          std::cout << "Null pointer assignment is not allowed.";
@@ -279,7 +283,7 @@ String& String::operator=(const char* c) {
   
   return *this;
 }
-
+//String concatenator with + operator from 2 strings 
  String operator+(const String& leftstr, const String& rightstr){
   size_t Size = leftstr.size_+ rightstr.size_;
   size_t Capacity = Size + 1;
