@@ -220,7 +220,8 @@ int main() {
     std::cin >> c_user; 
     std::cout << "Object 9: " << obj9.c_str() << std::endl;
     std::cout << "I want to append " << c_user << " to obj9" << std::endl;
-    String obj10 = obj9 + c_user;
+    String obj10;
+    obj10 = obj9 + c_user;
     std::cout << "Concatenation of obj9 and " << c_user <<": " << obj10.c_str() << std::endl; 
     
 
